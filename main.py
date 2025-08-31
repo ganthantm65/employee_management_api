@@ -153,4 +153,3 @@ async def get_employee_by_name(name: str, db: Session = Depends(get_db)):
         dep_location=dep.dept_location,
         salary=emp.emp_salary,
     )
-
