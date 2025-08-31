@@ -2,6 +2,12 @@ from sqlalchemy import Column,Integer,String,Float,ForeignKey
 from sqlalchemy.orm import relationship as relationship
 from database import base
 
+class Admin(base):
+    __tablename__="Admin"
+    id=Column(Integer,primary_key=True,index=True)
+    username=Column(String(200),unique=True,index=True)
+    password=Column(String(200))
+
 class Employee(base):
     __tablename__="Employee"
     id=Column(Integer,primary_key=True,index=True)
@@ -17,7 +23,7 @@ class Employee(base):
 class Department(base):
     __tablename__="Department"
     dep_id=Column(Integer,primary_key=True,index=True)
-    dept_name=Column(String(200),unique=True,index=True)
+    dept_name=Column(String(200),index=True)
     dept_manager=Column(String(200))
     dept_location=Column(String(200))
 
